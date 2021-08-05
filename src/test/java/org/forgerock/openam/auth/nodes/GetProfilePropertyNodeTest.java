@@ -19,6 +19,8 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singleton;
 import static java.util.Collections.singletonMap;
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static org.forgerock.json.JsonValue.field;
@@ -111,6 +113,6 @@ public class GetProfilePropertyNodeTest {
 
     private TreeContext setupTreeContext() {
         return new TreeContext(json(object(field(USERNAME, USER), field(REALM, REALM_NAME))),
-                json(object(field("transient", "content"))), new ExternalRequestContext.Builder().build(), emptyList(), null);
+                json(object(field("transient", "content"))), new ExternalRequestContext.Builder().build(), emptyList(), Optional.empty());
     }
 }
