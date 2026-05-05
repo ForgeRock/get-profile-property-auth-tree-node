@@ -86,7 +86,7 @@ public class GetProfilePropertyNode extends SingleOutcomeNode {
         String username = context.sharedState.get(USERNAME).asString();
         String realm = context.sharedState.get(REALM).asString();
         logger.trace("Searching for user {} in realm {}", username, realm);
-        AMIdentity userIdentity = coreWrapper.getIdentity(username, realm);
+        AMIdentity userIdentity = coreWrapper.getIdentityOrElseSearchUsingAuthNUserAlias(username, realm);
         if (userIdentity == null) {
             logger.error("Unable to find user identity, profile attributes will not be saved in shared state");
             return goToNext().build();
