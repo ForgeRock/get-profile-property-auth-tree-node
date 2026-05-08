@@ -22,7 +22,7 @@
 
     <groupId>org.forgerock.am</groupId>
     <artifactId>get-profile-property-auth-tree-node</artifactId>
-    <version>7.5.2-SNAPSHOT</version>
+    <version>7.5.2</version>
 
     <name>Get Profile Property Authentication Node</name>
     <description>An Authentication Tree Node for ForgeRock's Identity Platform</description>
